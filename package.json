@@ -1,0 +1,27 @@
+{
+  "name": "gif-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "babel-eslint": "^10.1.0",
+    "jsdoc": "^3.6.5"
+  },
+  "devDependencies": {
+    "eslint": "^7.5.0",
+    "eslint-config-google": "^0.14.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mivebe/gif-project.git"
+  },
+  "author": "MiVeBe",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mivebe/gif-project/issues"
+  },
+  "homepage": "https://github.com/mivebe/gif-project#readme"
+}
