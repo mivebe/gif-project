@@ -26,7 +26,7 @@ nav {
     top: 0;
     left: 0;
     float: left;
-    background-color: violet;
+    background-color: midnightblue;
     width:var(--full-width);
     height: var(--navbar-height);
     text-align: center;
@@ -37,10 +37,6 @@ nav *{
 vertical-align: middle;
 }
 
-nav button{
-    border-radius: 50%;
-    border: 2px solid black;
-}
 nav img{
     left: 0;
     margin-top: 5px;
@@ -51,7 +47,7 @@ nav a{
     text-decoration: none !important;
     border: 2px solid goldenrod;
     background-color: goldenrod;
-    border-radius: 15%;
+    border-radius: 20px;
     padding: 4px;
     word-spacing: 1rem;
     font-weight: bold;
@@ -65,26 +61,24 @@ form{
 }
 
 form button{
-    border-radius: 20%;
+    border-radius: 20px;
 }
 
 button img{
-    border-radius: 50%;
+    border-radius: 20px;
     margin: 0;
 }
 
 form input{
     margin: 0;
     padding: 0;
+    padding-left: 10px;
+    font-family: "Cookie", cursive;
+    font-weight: 600;
+    font-size: large;
     height: 2rem;
-    border-radius: 5px;
+    border-radius: 20px;
     top: 0s;
-}
-
-.dark{
-    color: white;
-    background-color: black;
-    border-color: black;
 }
 
 /* Plant a fake footer */
