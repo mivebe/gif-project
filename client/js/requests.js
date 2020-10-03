@@ -13,7 +13,7 @@ const getTrending = async (limit = 50) => {
     return res.json();
 };
 
-const uploadGif = async (gifData) => {
+const postGif = async (gifData) => {
     const res = await fetch(`${uploadEndpoint}`, {
         method: "POST",
         body: gifData
@@ -40,6 +40,6 @@ export {
     getTrending,
     getRandom,
     getGifInfo,
-    uploadGif,
+    postGif,
     searchGifs
 }
