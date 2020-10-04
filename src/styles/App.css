@@ -1,0 +1,36 @@
+:root{
+    --footer-height:1.2rem;
+    --footer-max-height:25px;
+    --full-width:100%;
+    --navbar-height:5rem;
+    --navbarNegative-height:-5rem;
+}
+body::before {
+    content: '';
+    display: block;
+    /* Dimensions must be as navbar's */
+    height: var(--navbar-height);
+    width: var(--full-width);
+}
+body {
+    padding: 0;
+    margin: 0;
+}
+body::after{
+    content: '';
+    display: block;
+    /* Dimensions must be as footer's */
+    height: var(--footer-height);
+    max-height: var(--footer-max-height);
+    width: var(--full-width);
+}
+
+
+.container {
+    position: relative;
+    margin-top: 100px;
+}
+.container img {
+    display: block;
+    width: 100%;
+}

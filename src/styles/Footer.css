@@ -1,0 +1,10 @@
+footer {
+    position: fixed;
+    bottom: 0;
+    height: var(--footer-height);
+    max-height: var(--footer-max-height);
+    width: var(--full-width);
+    text-align: center;
+    background-color: black;
+    color: white;
+  }
