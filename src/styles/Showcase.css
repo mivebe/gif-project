@@ -1,0 +1,12 @@
+
+#gifs-container{
+    width: 80%;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background-color: black;
+}
+.gif {
+    float: left;
+    margin: 5px;
+}

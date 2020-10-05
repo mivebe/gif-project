@@ -24,8 +24,6 @@ body::after{
     max-height: var(--footer-max-height);
     width: var(--full-width);
 }
-
-
 .container {
     position: relative;
     margin-top: 100px;
