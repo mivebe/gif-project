@@ -10,7 +10,7 @@ import "./styles/Showcase.css";
 
 import Gifs from "./components/Gifs";
 import { darkmode, options } from "./components/Modes" // eslint-disable-line
-import { handleSearch } from "./components/Handlers"
+import { handleInput, handleSearch } from "./components/Handlers"
 
 const App = () => (
     <div id="body">
@@ -21,8 +21,8 @@ const App = () => (
                 <li><a href="#home">Trending</a></li>
                 <li><a href="#home">Favorites</a></li>
                 <li><a href="#home">Uploaded</a></li>
-                <li><input type="text" placeholder="Search for a Gif"></input></li>
-                <li><a href="#home" onChange={handleSearch}>Search</a></li>
+                <li><input type="text" placeholder="Search for a Gif" onChange={handleInput}></input></li>
+                <li><a href="#home" onClick={handleSearch}>Search</a></li>
             </ul>
             <label htmlFor="nav-toggle" className="icon-burger">
                 <div className="line"></div>
