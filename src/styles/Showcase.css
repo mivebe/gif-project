@@ -1,12 +1,33 @@
 
-#gifs-container{
+#showcase{
+    width: 100%;
+    background-color: white;
+}
+.gifs-container{
     width: 80%;
+    margin: 0 auto;
     display:flex;
     flex-wrap: wrap;
     justify-content: center;
-    background-color: black;
 }
 .gif {
     float: left;
+    padding: 0 5px;
     margin: 5px;
+}
+.alert-container{
+    margin-top: 0.5vw;
+    width: 100%;
+}
+.alert-bad{
+    margin:0 auto;
+    background-color:rgb(200, 50, 50);
+    isolation: isolate;
+    text-align: center;
+    text-justify: middle;
+    border-radius: 5px;
+    height: calc(20px + 1vw);
+    font-family: "Cookie", cursive;
+    font-weight: bold;
+    width: 80%;
 }
