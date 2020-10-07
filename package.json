@@ -9,11 +9,13 @@
     "@testing-library/user-event": "^7.2.1",
     "axios": "^0.20.0",
     "bootstrap": "^4.5.2",
+    "chalk": "^4.1.0",
     "darkmode-js": "^1.5.7",
     "jquery": "^3.5.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-scripts": "3.4.3"
+    "react-scripts": "3.4.3",
+    "semver": "^7.3.2"
   },
   "scripts": {
     "start": "react-scripts start",
