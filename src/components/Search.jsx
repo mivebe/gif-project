@@ -20,7 +20,7 @@ const Search = () => {
             setIsError(false);
 
             try {
-                const response = await axios(`https://api.giphy.com/v1/gifs/search?api_key=m5o2VM82nhD0xeSF6Drxh2SQ4DjWJiGh&q=${input}&limit=2`);
+                const response = await axios(`https://api.giphy.com/v1/gifs/search?api_key=m5o2VM82nhD0xeSF6Drxh2SQ4DjWJiGh&q=${input}&limit=40`);
                 console.log(response);
                 setData(response.data.data);
 

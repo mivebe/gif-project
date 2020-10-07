@@ -19,7 +19,7 @@ const Gifs = () => {
                 const response = await axios("https://api.giphy.com/v1/gifs/trending", {
                     params: {
                         api_key: "m5o2VM82nhD0xeSF6Drxh2SQ4DjWJiGh",
-                        limit: 5,
+                        limit: 40,
                         offset: 0
                     }
                 });

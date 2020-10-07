@@ -10,12 +10,12 @@ import "./styles/Showcase.css";
 
 import Gifs from "./components/Gifs";
 import { darkmode, options } from "./components/Modes" // eslint-disable-line
-import { handleInput, handleSearch } from "./components/Handlers"
+import { handleInput, handleScroll, handleSearch } from "./components/Handlers"
 
 
 const App = () => (
 
-    <div id="body">
+    <div id="body" onScroll={handleScroll}>
         <nav>
             <input id="nav-toggle" type="checkbox"></input>
             <div className="logo"><img id="logo" src={logo} alt="404" height="60vh" /><strong>M</strong>i<strong>V</strong>e<strong>B</strong>e</div>
