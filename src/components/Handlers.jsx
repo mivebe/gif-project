@@ -1,14 +1,14 @@
 import React from "react";
-import Search from "./Search"
+import ReactDOM from 'react-dom'
+import Search from "./Search";
 
 let input = "";
 
 
 
 const handleSearch = () => {
-    console.log(`Input currently is ${input}`);
-    console.log(document.getElementById("showcase"));
-    document.getElementById("showcase").value = <Search />;
+    ReactDOM.unmountComponentAtNode(document.getElementById("showcase"))
+    ReactDOM.render(<Search />, document.getElementById("showcase"))
 }
 
 const handleInput = (e) => {

@@ -6,7 +6,7 @@ import Spinner from "./Spinner";
 import { input } from "./Handlers"
 
 const API_KEY = process.env.REACT_APP_GIPHY_API_KEY;
-const SEARCH_ENDPOINT = process.env.SEARCH_ENDPOINT;
+const SEARCH_ENDPOINT = process.env.REACT_APP_SEARCH_ENDPOINT;
 
 const Search = () => {
 
@@ -20,10 +20,11 @@ const Search = () => {
             setIsError(false);
 
             try {
-                const response = await axios(`${SEARCH_ENDPOINT}?api_key=${API_KEY}&q=${input}&limit=50`, {
-                });
+                const response = await axios(`https://api.giphy.com/v1/gifs/search?api_key=m5o2VM82nhD0xeSF6Drxh2SQ4DjWJiGh&q=${input}&limit=2`);
                 console.log(response);
                 setData(response.data.data);
+
+                console.log(API_KEY, SEARCH_ENDPOINT);
 
             } catch (err) {
                 setIsError(true)

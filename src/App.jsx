@@ -1,7 +1,7 @@
 import React from "react";
 
-
 import logo from "./media/logo.jpg";
+
 
 import "./styles/App.css";
 import "./styles/Navbar.css";
@@ -12,7 +12,9 @@ import Gifs from "./components/Gifs";
 import { darkmode, options } from "./components/Modes" // eslint-disable-line
 import { handleInput, handleSearch } from "./components/Handlers"
 
+
 const App = () => (
+
     <div id="body">
         <nav>
             <input id="nav-toggle" type="checkbox"></input>
@@ -34,7 +36,9 @@ const App = () => (
             <Gifs />
         </div>
         <footer>© mivebe</footer>
-    </div>
+    </div >
 );
+
+
 
 export default App;
