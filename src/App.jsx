@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { BrowserRouter as Router, Link } from 'react-router-dom';
 import axios from "axios";
 
 import logo from "./media/logo.jpg";
@@ -52,7 +53,7 @@ const useInitialGifs = () => {
 }
 
 const App = () => {
-    const [searchText, setSearchText] = React.useState('')
+    const [searchText, setSearchText] = useState('')
 
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
@@ -90,11 +91,21 @@ const App = () => {
                 <input id="nav-toggle" type="checkbox"></input>
                 <div className="logo"><img id="logo" src={logo} alt="404" height="60vh" /><strong>M</strong>i<strong>V</strong>e<strong>B</strong>e</div>
                 <ul className="links">
-                    <li><a href="#home">Trending</a></li>
-                    <li><a href="#home">Favorites</a></li>
-                    <li><a href="#home">Uploaded</a></li>
-                    <li><input type="text" placeholder="Search for a Gif" value={searchText} onChange={e => setSearchText(e.target.value)}></input></li>
-                    <li><a href="#home" onClick={handleSearchClick}>Search</a></li>
+                    <Router>
+                        <Link to="/home" >
+                            <li><a href="/home">Trending</a></li>
+                        </Link>
+                        <Link to="/favorites">
+                            <li><a href="/favorites">Favorites</a></li>
+                        </Link>
+                        <Link to="/uploaded">
+                            <li><a href="/uploaded">Uploaded</a></li>
+                        </Link>
+                        <li><input type="text" placeholder="Search for a Gif" value={searchText} onChange={e => setSearchText(e.target.value)}></input></li>
+                        <Link to="/search">
+                            <li><a href="/search" onClick={handleSearchClick}>Search</a></li>
+                        </Link>
+                    </Router>
                 </ul>
                 <label htmlFor="nav-toggle" className="icon-burger">
                     <div className="line"></div>
