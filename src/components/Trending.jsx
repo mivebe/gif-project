@@ -3,14 +3,13 @@ import axios from "axios";
 import Gifs from "./Gifs";
 
 const Trending = () => {
+
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
 
     useEffect(() => {
-
         const fetchData = async () => {
-
             setIsLoading(true);
             setIsError(false);
 
@@ -25,28 +24,16 @@ const Trending = () => {
                 setData(response.data.data);
 
             } catch (err) {
-                setIsError(true);
-                setTimeout(() => { setIsError(false) }, 5000);
+                setIsError(true)
+                setTimeout(() => { setIsError(false) }, 5000)
             }
-            setIsLoading(false);
+            setIsLoading(false)
         };
         fetchData()
-
     }, []);
-
-    /* const res = React.useMemo(() => ({
-         data,
-         isLoading,
-         isError
-     }), [data, isLoading, isError])*/
-
-
-    return (
-        <div>
-            <Gifs {...{ data, isLoading, isError }} />
-        </div>
-    )
-};
+    console.log("qwe");
+    return <Gifs data={data} isLoading={isLoading} isError={isError} />
+}
 
 
 export default Trending

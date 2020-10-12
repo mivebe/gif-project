@@ -2,12 +2,12 @@ import React from "react";
 
 import Spinner from "./Spinner";
 
-const Gifs = ({ isLoading, isError, data }) => {
+const Gifs = (props) => {
     const renderGifs = () => {
-        if (isLoading) {
+        if (props.isLoading) {
             return <Spinner />
         };
-        return data.map(el => {
+        return props.data.map(el => {
             return (
                 <div key={el.id} className="gif">
                     <img src={el.images.fixed_height.url} alt="404" />
@@ -19,7 +19,7 @@ const Gifs = ({ isLoading, isError, data }) => {
 
 
     const renderError = () => {
-        if (isError) {
+        if (props.isError) {
             return (
                 <div className="alert-container ">
                     <div className="alert-bad" >

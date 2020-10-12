@@ -1,10 +1,9 @@
-import { render } from "@testing-library/react"
 import React from "react";
 
 const Uploaded = () => {
     return (
         <div>
-            <p>ass</p>
+            <p>Uploaded</p>
         </div>
     )
 
