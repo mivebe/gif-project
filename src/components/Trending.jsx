@@ -31,7 +31,6 @@ const Trending = () => {
         };
         fetchData()
     }, []);
-    console.log("qwe");
     return <Gifs data={data} isLoading={isLoading} isError={isError} />
 }
 

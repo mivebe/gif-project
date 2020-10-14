@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { BrowserRouter as Router, NavLink, Switch, Route } from 'react-router-dom';
 
 
@@ -29,7 +29,7 @@ const App = () => {
                         <li><NavLink to="/favorites">Favorites</NavLink></li>
                         <li><NavLink to="/uploaded">Uploaded</NavLink></li>
                         <li><input type="text" placeholder="Search for a Gif" value={searchText} onChange={e => setSearchText(e.target.value)}></input></li>
-                        <li ><NavLink to="/search" >Search</NavLink></li>
+                        <li ><NavLink to={`/search/${searchText}`} >Search</NavLink></li>
 
                     </ul>
                     <label htmlFor="nav-toggle" className="icon-burger">
@@ -43,7 +43,7 @@ const App = () => {
                     <Switch>
                         <Route path="/favorites" ><Favorites /></Route>
                         <Route path="/uploaded"><Uploaded /></Route>
-                        <Route path="/search"><Search searchText={searchText} /></Route>
+                        <Route path="/search/:filter"><Search searchText={searchText} /></Route>
                         <Route path="/" exact={true}><Trending /></Route>
                     </Switch>
                 </div>

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import axios from "axios";
 import Gifs from "./Gifs";
 
@@ -7,6 +8,7 @@ const Search = (props) => {
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
+    const { filter } = useParams();
 
     useEffect(() => {
 
@@ -25,8 +27,8 @@ const Search = (props) => {
             setIsLoading(false)
         };
         fetchData()
-    }, []);
-    console.log("asd");
+    }, [filter]); // eslint-disable-line
+
     return <Gifs data={data} isLoading={isLoading} isError={isError} />
 };
 
