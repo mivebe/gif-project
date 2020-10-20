@@ -8,6 +8,8 @@ nav {
     top: 0;
     font-family: 'Montserrat', sans-serif;
     background-color: rgba(0, 0, 68, 0.9);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
 }
 nav .logo {
     display: flex;

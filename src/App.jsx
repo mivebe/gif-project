@@ -6,7 +6,7 @@ import { darkmode, options } from "./components/Modes" // eslint-disable-line
 import logo from "./media/logo.jpg";
 import Trending from "./components/Trending"
 import Favorites from "./components/Favorites"
-import Uploaded from "./components/Uploaded"
+import { Uploaded } from "./components/Uploaded"
 import { Search } from "./components/Search"
 
 
