@@ -32,6 +32,11 @@
     float: right;
     margin-left: 10px;
 }
+.fav-btn-clicked{
+background-image: url(../media/heart.svg) !important;
+isolation: isolate;
+background-color:rgb(44, 44, 44) !important;
+}
 .gif img{
 width:100%;
 margin-top: 5px;

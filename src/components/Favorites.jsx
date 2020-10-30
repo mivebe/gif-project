@@ -17,7 +17,6 @@ const Favorites = () => {
             const keys = Object.keys({ ...localStorage }).filter((el) => {
                 return el.includes("favorited");
             });
-            console.log(keys);
 
             const curData = []
             keys.map((el) => {
