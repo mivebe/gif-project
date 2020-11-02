@@ -30,6 +30,7 @@ const Trending = () => {
             setIsLoading(false)
         };
         fetchData()
+
     }, []);
     return <Gifs data={data} isLoading={isLoading} isError={isError} />
 }

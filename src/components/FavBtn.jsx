@@ -1,31 +1,34 @@
-import React from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { InnerStorage } from "../App";
 import "../styles/Showcase.css"
 
-const FavBtn = (props) => {
+const FavBtn = ({ gif, isFavorited }) => {
 
-    let classClicked = ""
+    const { favorited, setFavorited } = useContext(InnerStorage)
 
-    for (let i of props.keys) {
-        if (i.includes(props.gif.id)) {
-            classClicked = "fav-btn-clicked"
+    const curFavorite = {
+        id: gif.id,
+        images: {
+            fixed_height: {
+                url: gif.images.fixed_height.url
+            }
+        },
+        import_datetime: gif.import_datetime,
+        title: gif.title
+    }
+
+    const addToFavorites = () => {
+        if (isFavorited) {
+            setFavorited(favorited.filter(f => f.id !== gif.id))
+        } else {
+            const newFavorited = [...favorited, curFavorite]
+            setFavorited(newFavorited)
         }
     }
 
-    const saveInLS = (e) => {
-        const key = ("favorited " + (e.target.previousSibling.innerText));
-        const info = (e.target.previousSibling.innerText + " " +
-            e.target.parentNode.parentNode.nextSibling.src.toString() + " " +
-            e.target.previousSibling.previousSibling.innerText + " " +
-            e.target.parentNode.previousSibling.innerText);
-        localStorage.getItem(key) ? localStorage.removeItem(key) : localStorage.setItem(key, info);
-        classClicked ? classClicked = "" : classClicked = "fav-btn-clicked";
-        e.target.className = { classClicked }
-    }
-
-
-
+    const className = isFavorited ? "fav-btn-clicked" : ""
     return (
-        <button id="favorite-button" onClick={saveInLS} className={classClicked}></button>
+        <button id="favorite-button" onClick={addToFavorites} className={className} />
     )
 }
 export default FavBtn

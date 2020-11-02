@@ -31,15 +31,19 @@ const Uploaded = () => {
     const upkeys = Object.keys({ ...localStorage }).filter((el) => {
         return el.includes("uploaded");
     });
-    const ids = [];
-    upkeys.map((el) => {
 
+    const ids = upkeys.map(el => {
         const container = (el.split(" "));
-        return ids.push(container[1]);
-
+        return container[1]
     })
 
     useEffect(() => {
+        if (ids.filter(id => id !== undefined).length === 0) {
+            setData([])
+            return
+        }
+
+        console.log('KUUUUUUUUUUUUUUUUUUUUR', ids)
         const fetchData = async () => {
             setIsLoading(true);
             setIsError(false);
