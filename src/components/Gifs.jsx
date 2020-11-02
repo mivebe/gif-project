@@ -16,12 +16,8 @@ const Gifs = ({ isError, isLoading, data }) => {
             return (
                 <div key={el.id} className="gif" >
                     <div className="gif-info">
-                        <p id="name" style={{ margin: 10 }}>{el.title || "Nameless GIF"}</p>
-                        <div style={{ textAlign: "left", paddingLeft: 5, paddingRight: 5 }} >
-                            <p>{el.import_datetime || "date:N/A"}</p>
-                            <p style={{ display: "none" }}>{el.id}</p>
-                            <FavBtn isFavorited={isFavorited} gif={el} />
-                        </div>
+                        <p className="gif-name" >{el.title || "Nameless GIF"}</p>
+                        <p className="dateAndBtn" >{el.import_datetime || "date:N/A"}<FavBtn isFavorited={isFavorited} gif={el} /></p>
                     </div>
                     <img src={el.images.fixed_height.url} alt="404" style={{ borderRadius: 20 }} />
                 </div>
