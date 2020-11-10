@@ -24,6 +24,8 @@ const getFromLS = (key) => {
     return JSON.parse(res)
 }
 
+const date = new Date().getFullYear();
+
 const App = () => {
     const [searchText, setSearchText] = useState("");
     const [uploaded, setUploaded] = useState(getFromLS("uploaded") || []);
@@ -67,7 +69,7 @@ const App = () => {
                         </Switch>
                     </div>
                 </Router>
-                <footer>© mivebe</footer>
+                <footer>© mivebe {date}</footer>
             </div>
         </InnerStorage.Provider>
     )
