@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { BrowserRouter as Router, NavLink, Switch, Route } from 'react-router-dom';
 
 
@@ -31,10 +31,10 @@ const App = () => {
     const [uploaded, setUploaded] = useState(getFromLS("uploaded") || []);
     const [favorited, setFavorited] = useState(getFromLS("favorited") || []);
 
-    React.useEffect(() => {
+    useEffect(() => {
         localStorage.setItem('uploaded', JSON.stringify(uploaded))
     }, [uploaded])
-    React.useEffect(() => {
+    useEffect(() => {
         localStorage.setItem('favorited', JSON.stringify(favorited))
     }, [favorited])
 
