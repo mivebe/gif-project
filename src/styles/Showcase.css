@@ -11,7 +11,8 @@
     justify-content: center;
 }
 .gif {
-    float: left;
+    display: flex;
+    flex-direction: column;
     padding-left: 10px;
     padding-right: 10px;
     margin: 5px;
@@ -45,14 +46,17 @@
     margin-left: 10px;
 }
 .fav-btn-clicked{
-background-image: url(../media/heart.svg) !important;
-isolation: isolate;
-background-color:rgb(44, 44, 44) !important;
+    background-image: url(../media/heart.svg) !important;
+    isolation: isolate;
+    background-color:rgb(44, 44, 44) !important;
 }
 .gif img{
-width:100%;
-margin-top: 5px;
-margin-bottom: 0px;
+    vertical-align: middle;
+    align-self: center;
+    width:20vw;
+    height:20vw;
+    margin-top: 5px;
+    margin-bottom: 0px;
 }
 .alert-container{
     margin-top: 0.5vw;

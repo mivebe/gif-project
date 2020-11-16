@@ -1,28 +1,19 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Gifs from "./Gifs";
-import $ from "jquery";
-import LoadMore from "./LoadMore"
+
+
 
 const Trending = (props) => {
 
     const [data, setData] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const [isError, setIsError] = useState(false);
-    const [offset, setOffset] = useState(0);
-
-    // $(window).scroll(function () {
-    //     if ($(window).scrollTop() + $(window).height() > $(document).height() - 100) {
-    //         setOffset(offset + 40);
-    //         console.log("asd");
-    //         return <Trending offset={offset} />
-    //     }
-    // });
 
 
     useEffect(() => {
 
-        const fetchData = async (skip) => {
+        const fetchData = async () => {
             setIsLoading(true);
             setIsError(false);
 
@@ -32,10 +23,10 @@ const Trending = (props) => {
                     params: {
                         api_key: "m5o2VM82nhD0xeSF6Drxh2SQ4DjWJiGh",
                         limit: 40,
-                        offset: skip || 0
+                        offset: props.offset
                     }
                 });
-                setData(response.data.data);
+                setData(data.concat(response.data.data));
 
             } catch (err) {
                 setIsError(true)
@@ -45,7 +36,9 @@ const Trending = (props) => {
         };
         fetchData()
 
-    }, [props.offset]);
+
+    }, [props.offset]);// eslint-disable-line
+
     return <Gifs data={data} isLoading={isLoading} isError={isError} />
 
 

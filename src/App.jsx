@@ -15,8 +15,9 @@ import "./styles/Navbar.css";
 import "./styles/Footer.css";
 import "./styles/Showcase.css";
 
-const init = { uploaded: [], favorited: [] }
+const init = { uploaded: [], favorited: [], offset: 0 }
 export const InnerStorage = createContext(init)
+
 
 const getFromLS = (key) => {
     const res = localStorage.getItem(key);
@@ -30,6 +31,7 @@ const App = () => {
     const [searchText, setSearchText] = useState("");
     const [uploaded, setUploaded] = useState(getFromLS("uploaded") || []);
     const [favorited, setFavorited] = useState(getFromLS("favorited") || []);
+    const [offset, setOffset] = React.useState(0)
 
     useEffect(() => {
         localStorage.setItem('uploaded', JSON.stringify(uploaded))
@@ -39,7 +41,7 @@ const App = () => {
     }, [favorited])
 
     return (
-        <InnerStorage.Provider value={{ uploaded, setUploaded, favorited, setFavorited }}>
+        <InnerStorage.Provider value={{ uploaded, setUploaded, favorited, setFavorited, offset, setOffset }}>
             <div id="body">
                 <Router>
                     <nav>
@@ -65,7 +67,7 @@ const App = () => {
                             <Route path="/favorites" ><Favorites /></Route>
                             <Route path="/uploaded"><Uploaded /></Route>
                             <Route path="/search/:filter"><Search searchText={searchText} /></Route>
-                            <Route path="/" exact={true}><Trending /></Route>
+                            <Route path="/" exact={true}><Trending offset={offset} /></Route>
                         </Switch>
                     </div>
                 </Router>
