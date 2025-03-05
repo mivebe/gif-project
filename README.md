@@ -1,13 +1,20 @@
-This is a React.js project about viewing, collecting and uploading GIFs.
+# GIF Project
 
-It is a SPA working with the GIPHY API.
+A React.js project for viewing, collecting, and uploading GIFs. This single-page application (SPA) interacts with the GIPHY API.
 
-Features:
- - Responsive sticky navbar (HTML & CSS only)
- - Dynamic Footer
- - Different mobile-friendly layout (HTML & CSS only)
- - Trending, Search, Favorite and Upload functionality
- - Use of LocalStorage via a custom created In-App Storage
- - React.js Hooks
- - Infinite scrolling
- - Dark and Light modes
+## Features
+
+- **Responsive Sticky Navbar**: Built with HTML & CSS.
+- **Dynamic Footer**
+- **Mobile-Friendly Layout**: Designed with HTML & CSS.
+- **Functionality**:
+  - Trending
+  - Search
+  - Favorite
+  - Upload
+- **Custom In-App Storage**: Utilizes LocalStorage.
+- **React.js Hooks**
+- **Infinite Scrolling**
+- **Dark and Light Modes**
+
+Enjoy exploring and managing your favorite GIFs!
