@@ -1,14 +1,11 @@
 import React, { createContext, useState, useEffect } from "react";
-import { BrowserRouter as Router, NavLink, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, NavLink, Routes, Route } from 'react-router-dom';
 
-
-import { darkmode, options } from "./components/Modes" // eslint-disable-line
 import logo from "./media/logo.jpg";
 import Trending from "./components/Trending"
 import Favorites from "./components/Favorites"
 import { Uploaded } from "./components/Uploaded"
 import { Search } from "./components/Search"
-
 
 import "./styles/App.css";
 import "./styles/Navbar.css";
@@ -63,12 +60,12 @@ const App = () => {
                     </nav>
 
                     <div id="showcase">
-                        <Switch>
-                            <Route path="/favorites" ><Favorites /></Route>
-                            <Route path="/uploaded"><Uploaded /></Route>
-                            <Route path="/search/:filter"><Search searchText={searchText} /></Route>
-                            <Route path="/" exact={true}><Trending offset={offset} /></Route>
-                        </Switch>
+                        <Routes>
+                            <Route path="/favorites" element={<Favorites />} />
+                            <Route path="/uploaded" element={<Uploaded />} />
+                            <Route path="/search/:filter" element={<Search searchText={searchText} />} />
+                            <Route path="/" exact element={<Trending offset={offset} />} />
+                        </Routes>
                     </div>
                 </Router>
                 <footer>© mivebe {date}</footer>
